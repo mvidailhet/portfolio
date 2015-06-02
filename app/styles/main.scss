@@ -38,6 +38,16 @@ body {
         border-color: $main-color;
         color: #FFFFFF;
     }
+
+    &.btn-white {
+        border-color: #ffffff;
+        color: #ffffff;
+
+        &:hover, &:focus {
+            background-color: #ffffff;
+            color: $main-color;
+        }
+    }
 }
 
 .mask-hover-image {
@@ -326,8 +336,17 @@ body {
                     color: #ffffff;
 
                     .description {
-                        padding: 20px 20px;
 
+                        padding: 20px 20px;
+                        text-align: left;
+
+                        .title {
+                            font-weight: bold;
+                        }
+
+                        .text {
+                            margin-bottom: 30px;
+                        }
                     }
 
                     .col-carousel {
@@ -423,16 +442,6 @@ body {
 
         .text {
             margin: 20px 0 30px;
-        }
-
-        .btn {
-            border-color: #ffffff;
-            color: #ffffff;
-
-            &:hover {
-                background-color: #ffffff;
-                color: $main-color;
-            }
         }
     }
 }
