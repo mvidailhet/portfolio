@@ -318,16 +318,34 @@ body {
                 }
 
                 &.project-details {
+                    display: none;
                     position: relative;
                     border: 1px solid $main-color;
                     background-color: transparentize($main-color, 0.2);
                     margin: 0 1px 30px 0;
-                    padding: 20px 0;
                     color: #ffffff;
 
-                    img {
-                        max-height: 400px;
-                        margin: 0 auto;
+                    .description {
+                        padding: 20px 20px;
+
+                    }
+
+                    .col-carousel {
+                        border-right: $main-color;
+                        background-color: transparentize(#ffffff, 0.7);
+
+                        .carousel {
+                            padding: 20px 0;
+
+                            img {
+                                max-height: 400px;
+                                margin: 0 auto;
+                            }
+
+                            .carousel-control.left, .carousel-control.right {
+                                background: none;
+                            }
+                        }
                     }
                 }
             }

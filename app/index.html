@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="col-sm-4 col">
-                <div class="item-type-line mask-hover-image">
+                <div class="item-type-line mask-hover-image project-preview" id="work-somhome">
                     <a href="#" class="item-hover">
                         <span class="v-aligner"></span>
 
@@ -119,15 +119,9 @@
                 <div class="color-bridge"></div>
             </div>
         </div>
-        <div class="row project-details">
-            <div class="col-sm-4 col">
+        <div id="project-somhome-details" class="row project-details">
+            <div class="col-sm-4 col col-carousel">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
@@ -154,7 +148,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-8 col">
+            <div class="col-sm-8 col description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eadem nunc mea adversum te oratio est.
                 Igitur ne dolorem quidem. Sed in rebus apertissimis nimium longi sumus. Erat enim Polemonis.
                 Scaevola tribunus plebis ferret ad plebem vellentne de ea re quaeri. Est enim effectrix multarum et
@@ -314,9 +308,22 @@
 <!-- endbower -->
 <!-- endbuild -->
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<!-- endbuild -->
+<script type="text/javascript">
+
+    $('.project-preview').click(function () {
+
+
+        if($(this).hasClass('active')) {
+            $('.project-details').slideUp();
+        } else {
+            $('.project-details').slideDown();
+        }
+
+        $(this).toggleClass('active');
+        return false;
+    });
+
+</script>
+
 </body>
 </html>
