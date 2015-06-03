@@ -103,7 +103,8 @@
                 </div>
             </div>
             <div class="col-sm-4 col">
-                <div class="item-type-line mask-hover-image project-preview" data-target="#project-somhome_mobile-details">
+                <div class="item-type-line mask-hover-image project-preview"
+                     data-target="#project-somhome_mobile-details">
                     <a href="#" class="item-hover">
                         <span class="v-aligner"></span>
 
@@ -265,7 +266,8 @@
                         <li>geolocation matching using the Google map API</li>
                         <li>Profile boost payment method using Be2bill API</li>
                     </ul>
-                    <a href="https://somhome.com" class="btn btn-primary btn-lg btn-white" target="_blank">See website</a>
+                    <a href="https://somhome.com" class="btn btn-primary btn-lg btn-white" target="_blank">See
+                        website</a>
                 </div>
             </div>
         </div>
@@ -422,6 +424,8 @@
 
 <script type="text/javascript">
 
+    var mobileWidthLimit = 752;
+
     $('.project-preview').click(function (event) {
         $('.project-details').slideUp();
         var isActive = $(this).hasClass('active');
@@ -430,7 +434,7 @@
             $(this).addClass('active');
 
             // if mobile screen, put the details div just under the project image
-            if ($(window).width() < 752) {
+            if ($(window).width() < mobileWidthLimit) {
                 $($(this).attr('data-target')).insertAfter($(this));
             } else {
                 $($(this).attr('data-target')).appendTo($(this).parents('.row').attr('data-target'));
@@ -442,9 +446,33 @@
         return false;
     });
 
+    var currentWindowWidth = 0;
+
+    function findPreviewFromDetail(projectDetailEl) {
+        var result = null;
+        $('.project-preview').each(function (index, projectPreviewEl) {
+            if ($(projectPreviewEl).attr('data-target') == '#' + $(projectDetailEl).attr('id')) {
+                result = projectPreviewEl;
+            }
+        });
+        return result;
+    }
+
     $(window).resize(function () {
-        //752
-        console.log();
+        $('.project-details').each(function (index, projectDetailEl) {
+            if ($(projectDetailEl).css('display') == 'block') {
+                if ($(window).width() < mobileWidthLimit && currentWindowWidth > mobileWidthLimit) {
+                    var projectPreviewEl = findPreviewFromDetail(projectDetailEl);
+                    $(projectDetailEl).insertAfter($(projectPreviewEl));
+                    console.log(projectPreviewEl);
+                } else if ($(window).width() > mobileWidthLimit && currentWindowWidth < mobileWidthLimit) {
+                    var projectPreviewEl = findPreviewFromDetail(projectDetailEl);
+                    console.log(projectPreviewEl);
+                    $(projectDetailEl).appendTo($(projectPreviewEl).parents('.row').attr('data-target'));
+                }
+            }
+        });
+        currentWindowWidth = $(window).width();
     });
 
 </script>
