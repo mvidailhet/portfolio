@@ -247,6 +247,11 @@ body {
         }
     }
 
+    .block-description {
+        margin: 0 auto 60px;
+        max-width: 900px;
+    }
+
     .text {
         @media (min-width: $screen-tablet) {
             font-size: 14px;
