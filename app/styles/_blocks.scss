@@ -1,0 +1,268 @@
+.full-width-block {
+    text-align: center;
+    width: 100%;
+    padding: 65px 0;
+    font-size: 18px;
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 60px;
+        font-size: 42px;
+
+        .border {
+            margin: 20px auto 35px auto;
+            position: relative;
+            bottom: 0;
+            width: 130px;
+            height: 3px;
+            background: $main-color;
+            display: block;
+        }
+    }
+
+    .block-description {
+        margin: 0 auto 60px;
+        max-width: 900px;
+    }
+
+    .row {
+
+        .col {
+            hr {
+                margin: 40px auto;
+                width: 30%;
+                border-top: 1px solid $main-color;
+
+                @media (min-width: $screen-tablet) {
+                    display: none;
+                }
+            }
+        }
+
+        .col-centered {
+
+            float: none;
+            margin-right: -4px;
+            display: inline-block;
+        }
+
+        .col-sm-centered {
+
+            @media (min-width: $screen-tablet) {
+                float: none;
+                margin-right: -4px;
+                display: inline-block;
+            }
+        }
+    }
+
+    &.grey-block {
+        background-color: $background-grey;
+    }
+
+    &.color-block {
+        background: $main-color;
+        color: #fff;
+
+        h2 {
+            color: #fff;
+
+            .border {
+                background-color: #ffffff;
+            }
+        }
+    }
+
+    &.image-block {
+        color: #fff;
+
+        .row {
+            .col {
+                hr {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.block-projects {
+
+    .container-fluid {
+        max-width: 1144px;
+
+        .row {
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .col {
+
+                margin-top: 20px;
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                @media (min-width: $screen-tablet) {
+                    margin-top: 0;
+                }
+
+                .work-image {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            &.project-details {
+                display: none;
+                position: relative;
+                border: 1px solid $main-color;
+                background-color: transparentize($main-color, 0.2);
+                margin: 0 1px 30px 0;
+                color: #ffffff;
+
+                .description {
+
+                    padding: 20px 20px;
+                    text-align: left;
+
+                    .title {
+                        font-weight: bold;
+                    }
+
+                    .text {
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .btn {
+                    display: block;
+
+                    @media (min-width: $screen-tablet) {
+                        display: inline-block;
+                    }
+                }
+
+                .col-carousel {
+                    border-right: $main-color;
+                    background-color: transparentize(#ffffff, 0.7);
+
+                    .carousel {
+                        padding: 20px 0;
+
+                        .item {
+
+                            img {
+                                max-height: 400px;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .carousel-control.left, .carousel-control.right {
+                            background: none;
+                        }
+                    }
+                }
+
+                &#project-beaumarly-details {
+                    .carousel {
+                        .item {
+                            height: 410px;
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block-skills {
+
+    .col {
+
+        .title {
+            margin-bottom: 60px;
+            font-size: 37px;
+
+            @media (min-width: $screen-tablet) {
+                font-size: 31px;
+            }
+
+            @media (min-width: $screen-desktop) {
+                font-size: 37px;
+            }
+        }
+
+        .main-image {
+            width: 60%;
+
+            @media (min-width: $screen-phone) {
+                width: 30%;
+            }
+
+            @media (min-width: $screen-tablet) {
+                width: 60%;
+                font-size: 31px;
+            }
+        }
+
+        .main-name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .others {
+            padding: 0 10%;
+            .other {
+                display: inline-block;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+.block-trustme {
+
+    img {
+        height: 92px;
+    }
+    .name {
+        margin-top: 15px;
+        font-size: 22px;
+        display: inline-block;
+    }
+
+    .col {
+        margin-bottom: 40px;
+        @media (min-width: $screen-desktop) {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.block-callToAction {
+    background-image: url("../images/intro-background.jpg");
+    padding: 40px 0 80px;
+
+    .text {
+        margin: 20px 0 30px;
+    }
+}
