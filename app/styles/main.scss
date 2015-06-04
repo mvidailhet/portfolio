@@ -206,8 +206,6 @@ body {
         width: 100%;
         height: 100%;
         content: '';
-        /*        -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=80)";
-                filter: alpha(opacity=80);*/
         opacity: 0.9;
         z-index: 0;
     }
@@ -294,6 +292,34 @@ body {
 
             .border {
                 background-color: #ffffff;
+            }
+        }
+    }
+
+    &.image-block {
+        color: #fff;
+        background-position: center center;
+        background-size: cover;
+
+        &::after {
+            position: absolute;
+            background-color: $main-color;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            opacity: 0.9;
+            z-index: 0;
+        }
+
+        .row {
+            .col {
+                hr {
+                    border-color: #fff;
+                }
             }
         }
     }
@@ -458,7 +484,8 @@ body {
     }
 
     &.call-to-action {
-        padding: 40px 0;
+        background-image: url("../images/intro-background.jpg");
+        padding: 40px 0 80px;
 
         .text {
             margin: 20px 0 30px;
