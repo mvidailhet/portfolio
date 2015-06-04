@@ -32,6 +32,7 @@ body {
     border-radius: 2px;
     border-width: 3px;
     color: $main-color;
+    transition: all 200ms ease-out;
 
     &:hover {
         background-color: $main-color;
@@ -192,6 +193,11 @@ body {
                     color: #ffffff;
                     text-decoration: none;
                     margin: 0 5px;
+                    transition: all 200ms ease-out;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
             }
         }
